@@ -1,0 +1,14 @@
+go to the neurotopics folder and open ipython:
+from scripts import load_roi_labels as lr
+al = lr.atlas_labeler()
+to get data from brodmann areas map as a numpy array:
+data = al.load_atlas_roi_data('brodmann')
+to get data from all documents for one region and the name of the region:
+roi_peaks = data[1,:] 
+region_name = al.ba_labels[1]
+to get data from one study for all brodmann regions and the doi of that study:
+study_rois = data[:,1]
+doi_label = al.doi_labels[1]
+
+to get doi labels:
+doi_labels = al.doi_labels()
